@@ -1,6 +1,6 @@
 {
-  "name": "ProjectName.WebResource",
-  "description": "ProjectName.WebResource",
+  "name": "ProjectName.WebResources",
+  "description": "ProjectName.WebResources",
   "version": "1.0.0",
   "type": "commonjs",
   "scripts": {
@@ -10,13 +10,13 @@
   },
   "repository": {
     "type": "git",
-    "url": ""
+    "url": "https://github.com/NghiaNguyen170192/d365-project-template/"
   },
   "keywords": [],
-  "author": "",
+  "author": "Nguyễn Quốc Trọng Nghĩa",
   "license": "ISC",
   "bugs": {
-    "url": ""
+    "url": "https://github.com/NghiaNguyen170192/d365-project-template/issues"
   },
   "homepage": "",
   "devDependencies": {
