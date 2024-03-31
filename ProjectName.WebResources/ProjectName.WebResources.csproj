@@ -1,0 +1,46 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+	<PropertyGroup>
+		<TargetFramework>net6.0</TargetFramework>
+		<TypeScriptCompileBlocked>false</TypeScriptCompileBlocked>
+		<TypeScriptToolsVersion>Latest</TypeScriptToolsVersion>
+		<IsPackable>false</IsPackable>
+		<OutputType>Library</OutputType>
+		<RunPostBuildEvent>Always</RunPostBuildEvent>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<!-- Include your TypeScript files -->
+		<TypeScriptCompile Include="Scripts/**/*.ts" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <TypeScriptCompile Remove="node_modules\**" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<!-- Reference to the NuGet package for TypeScript compilation -->
+		<PackageReference Include="Delegate.XrmDefinitelyTyped" Version="6.4.0" />
+		<PackageReference Include="Microsoft.TypeScript.MSBuild" Version="5.4.3">
+			<PrivateAssets>all</PrivateAssets>
+			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+		</PackageReference>
+
+		<!-- Add other NuGet packages here -->
+    <Reference Include="XrmDefinitelyTyped, Version=6.4.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Delegate.XrmDefinitelyTyped.6.4.0\lib\net462\XrmDefinitelyTyped.exe</HintPath>
+    </Reference>
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Folder Include="out\entities\" />
+	  <Folder Include="src\entities\" />
+	  <Folder Include="src\lib\" />
+	  <Folder Include="typings\XRM\_internal\" />
+	</ItemGroup>
+
+	<!-- Optional: Import targets for TypeScript -->
+	<Import Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets" Condition="Exists('$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets')" />
+	<Target Name="PreBuild" BeforeTargets="PreBuildEvent">
+	  <Exec Command="npm run build" />
+	</Target>
+</Project>
