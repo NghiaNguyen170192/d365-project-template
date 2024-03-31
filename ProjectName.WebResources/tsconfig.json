@@ -2,6 +2,7 @@
   "compileOnSave": true,
   "compilerOptions": {
     "module": "commonjs",
+    "types": [],
     "target": "es6",
     "noImplicitAny": false,
     "strictNullChecks": true,
@@ -13,11 +14,14 @@
     "lib": [
       "dom",
       "es6"
-    ]
+    ],
+    "noEmitOnError": true,
+    "typeRoots" : ["./typings", "./typings/XRM"]
   },
   "include": [
     "src/**/*",
-    "typings/**/*"
+    "typings/*.d.ts",
+    "typings/XRM/*.d.ts"
   ],
   "exclude": [
     "node_modules"
