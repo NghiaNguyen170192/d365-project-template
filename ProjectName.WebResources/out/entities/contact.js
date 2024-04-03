@@ -1,11 +1,13 @@
+"use strict";
 var ProjectName;
 (function (ProjectName) {
     var Contact;
     (function (Contact) {
-        let Form;
+        let form;
         function onLoad(executionContext) {
-            Form = executionContext.getFormContext();
-            const name = Form.getAttribute("name");
+            form = executionContext.getFormContext();
+            const name = form.getAttribute("name");
+            //test comment
             alert(name);
         }
         Contact.onLoad = onLoad;

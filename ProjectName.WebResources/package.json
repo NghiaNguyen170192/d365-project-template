@@ -1,12 +1,11 @@
 {
-  "name": "ProjectName.WebResources",
+  "name": "project-name.web-resources",
   "description": "ProjectName.WebResources",
   "version": "1.0.0",
   "type": "commonjs",
   "module": "commonjs",
   "scripts": {
-    "build": "npm run lint && tsc && npm run minify",
-    "lint": "eslint src/**/*.ts --ext .ts",
+    "build": "tsc && npm run minify",
     "watch": "tsc --watch",
     "minify": "uglifyjs-folder ./out/entities -o ./out/minified -e"
   },
@@ -22,9 +21,6 @@
   },
   "homepage": "",
   "devDependencies": {
-    "@typescript-eslint/eslint-plugin": "^7.4.0",
-    "@typescript-eslint/parser": "^7.4.0",
-    "eslint": "^8.57.0",
     "typescript": "^5.4.3",
     "uglify-js": "^3.17.4",
     "uglifyjs-folder": "^3.3.0"

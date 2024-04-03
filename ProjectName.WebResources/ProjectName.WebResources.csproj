@@ -6,6 +6,8 @@
 		<IsPackable>false</IsPackable>
 		<OutputType>Library</OutputType>
 		<RunPostBuildEvent>Always</RunPostBuildEvent>
+    <TypeScriptNoEmitOnError>true</TypeScriptNoEmitOnError>
+    <TypeScriptNoImplicitReturns>true</TypeScriptNoImplicitReturns>
 	</PropertyGroup>
 
 	<ItemGroup>
@@ -33,9 +35,7 @@
 
 	<ItemGroup>
 	  <Folder Include="out\entities\" />
-	  <Folder Include="src\entities\" />
 	  <Folder Include="src\lib\" />
-	  <Folder Include="typings\XRM\_internal\" />
 	</ItemGroup>
 
 	<!-- Optional: Import targets for TypeScript -->

@@ -1,27 +1,35 @@
 {
   "compileOnSave": true,
   "compilerOptions": {
-    "module": "commonjs",
-    "types": [],
-    "target": "es6",
-    "noImplicitAny": false,
-    "strictNullChecks": true,
-    "removeComments": false,
-    "experimentalDecorators": true,
-    //"declaration": true,
-    "outDir": "out/entities",
-    "sourceMap": false,
     "lib": [
       "dom",
-      "es6"
+      "ES6"
     ],
-    "noEmitOnError": true,
-    "typeRoots" : ["./typings", "./typings/XRM"]
+    "module": "commonjs",
+    "noImplicitAny": false,
+    "outDir": "out/entities",
+    "removeComments": true,
+    "sourceMap": false,
+    "strictNullChecks": true,
+    "target": "ES6",
+    "baseUrl": "./",
+    "paths": {
+      "*": [
+        "typings/*",
+        "*"
+      ]
+    },
+    "esModuleInterop": true,
+    "strict": true,
+    "moduleResolution": "Classic",
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "noEmitOnError": true
+    
   },
   "include": [
     "src/**/*",
-    "typings/*.d.ts",
-    "typings/XRM/*.d.ts"
+    "typings/**/*"
   ],
   "exclude": [
     "node_modules"

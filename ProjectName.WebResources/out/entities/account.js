@@ -1,12 +1,15 @@
+"use strict";
 var ProjectName;
 (function (ProjectName) {
     var Account;
     (function (Account) {
-        let Form;
+        let form;
+        let formType = 1;
         function onLoad(executionContext) {
-            Form = executionContext.getFormContext();
-            const name = Form.getAttribute("name");
-            alert(name);
+            form = executionContext.getFormContext();
+            const name = form.getAttribute("name");
+            console.log(name);
+            console.log(formType);
         }
         Account.onLoad = onLoad;
     })(Account = ProjectName.Account || (ProjectName.Account = {}));
