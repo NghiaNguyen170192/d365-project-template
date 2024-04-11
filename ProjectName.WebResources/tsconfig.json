@@ -3,15 +3,19 @@
   "compilerOptions": {
     "lib": [
       "dom",
-      "ES6"
+      "ESNext"
+    ],
+    "types": [
+      "node",
+      "xrm"
     ],
     "module": "commonjs",
     "noImplicitAny": false,
-    "outDir": "out/entities",
-    "removeComments": true,
+    "outDir": "./out",
+    "removeComments": false,
     "sourceMap": false,
     "strictNullChecks": true,
-    "target": "ES6",
+    "target": "ESNext",
     "baseUrl": "./",
     "paths": {
       "*": [
@@ -19,13 +23,16 @@
         "*"
       ]
     },
+    "rootDir": "./src",
     "esModuleInterop": true,
     "strict": true,
     "moduleResolution": "Classic",
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true,
-    "noEmitOnError": true
-    
+    "noEmitOnError": false,
+    "typeRoots": [
+      "./node_modules/@types"
+    ]
   },
   "include": [
     "src/**/*",

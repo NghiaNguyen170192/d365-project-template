@@ -4,7 +4,7 @@ var ProjectName;
     var Account;
     (function (Account) {
         let form;
-        let formType = 1;
+        let formType = 1 /* Xrm.FormType.Create */;
         function onLoad(executionContext) {
             form = executionContext.getFormContext();
             const name = form.getAttribute("name");

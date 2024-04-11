@@ -7,7 +7,7 @@
   "scripts": {
     "build": "tsc && npm run minify",
     "watch": "tsc --watch",
-    "minify": "uglifyjs-folder ./out/entities -o ./out/minified -e"
+    "minify": "uglifyjs-folder ./out -o ./out.min -e"
   },
   "repository": {
     "type": "git",
@@ -21,6 +21,8 @@
   },
   "homepage": "",
   "devDependencies": {
+    "@types/node": "^20.12.7",
+    "@types/xrm": "^9.0.79",
     "typescript": "^5.4.3",
     "uglify-js": "^3.17.4",
     "uglifyjs-folder": "^3.3.0"
