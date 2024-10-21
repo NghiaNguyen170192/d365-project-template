@@ -1,46 +1,45 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk.Web">
-	<PropertyGroup>
-		<TargetFramework>net6.0</TargetFramework>
-		<TypeScriptCompileBlocked>false</TypeScriptCompileBlocked>
-		<TypeScriptToolsVersion>Latest</TypeScriptToolsVersion>
-		<IsPackable>false</IsPackable>
-		<OutputType>Library</OutputType>
-		<RunPostBuildEvent>Always</RunPostBuildEvent>
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <TypeScriptCompileBlocked>false</TypeScriptCompileBlocked>
+    <TypeScriptToolsVersion>Latest</TypeScriptToolsVersion>
+    <IsPackable>false</IsPackable>
+    <OutputType>Library</OutputType>
+    <RunPostBuildEvent>Always</RunPostBuildEvent>
     <TypeScriptNoEmitOnError>true</TypeScriptNoEmitOnError>
     <TypeScriptNoImplicitReturns>true</TypeScriptNoImplicitReturns>
-	</PropertyGroup>
-
-	<ItemGroup>
-		<!-- Include your TypeScript files -->
-		<TypeScriptCompile Include="Scripts/**/*.ts" />
-	</ItemGroup>
-
-	<ItemGroup>
-	  <Compile Remove="out\**" />
-	  <Content Remove="out\**" />
-	  <EmbeddedResource Remove="out\**" />
-	  <None Remove="out\**" />
-	  <TypeScriptCompile Remove="node_modules\**" />
-	  <TypeScriptCompile Remove="out\**" />
-	</ItemGroup>
-
-	<ItemGroup>
-		<!-- Reference to the NuGet package for TypeScript compilation -->
-		<PackageReference Include="Delegate.XrmDefinitelyTyped" Version="6.4.0" />
-		<PackageReference Include="Microsoft.TypeScript.MSBuild" Version="5.4.4">
-			<PrivateAssets>all</PrivateAssets>
-			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
-		</PackageReference>
-
-		<!-- Add other NuGet packages here -->
+  </PropertyGroup>
+  <ItemGroup>
+    <!-- Include your TypeScript files -->
+    <TypeScriptCompile Include="Scripts/**/*.ts" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Remove="out\**" />
+    <Content Remove="out\**" />
+    <EmbeddedResource Remove="out\**" />
+    <None Remove="out\**" />
+    <TypeScriptCompile Remove="node_modules\**" />
+    <TypeScriptCompile Remove="out\**" />
+  </ItemGroup>
+  <ItemGroup>
+    <!-- Reference to the NuGet package for TypeScript compilation -->
+    <PackageReference Include="Delegate.XrmDefinitelyTyped" Version="6.4.0" />
+    <PackageReference Include="Microsoft.TypeScript.MSBuild" Version="5.4.4">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <Reference Include="System.Text.Json, Version=8.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51">
+      <HintPath>..\packages\System.Text.Json.8.0.5\lib\net6.0\System.Text.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <!-- Add other NuGet packages here -->
     <Reference Include="XrmDefinitelyTyped, Version=6.4.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\packages\Delegate.XrmDefinitelyTyped.6.4.0\lib\net462\XrmDefinitelyTyped.exe</HintPath>
     </Reference>
-	</ItemGroup>
-
-	<!-- Optional: Import targets for TypeScript -->
-	<Import Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets" Condition="Exists('$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets')" />
-	<Target Name="PreBuild" BeforeTargets="PreBuildEvent">
-	  <Exec Command="npm run build" />
-	</Target>
+  </ItemGroup>
+  <!-- Optional: Import targets for TypeScript -->
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets" Condition="Exists('$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets')" />
+  <Target Name="PreBuild" BeforeTargets="PreBuildEvent">
+    <Exec Command="npm run build" />
+  </Target>
 </Project>
