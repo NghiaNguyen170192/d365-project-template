@@ -1,0 +1,30 @@
+{
+  "name": "project-name.web-resources",
+  "description": "ProjectName.WebResources",
+  "version": "1.0.0",
+  "type": "commonjs",
+  "module": "commonjs",
+  "scripts": {
+    "build": "tsc && npm run minify",
+    "watch": "tsc --watch",
+    "minify": "uglifyjs-folder ./out -o ./out.min -e"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/NghiaNguyen170192/d365-project-template/"
+  },
+  "keywords": [],
+  "author": "Nguyễn Quốc Trọng Nghĩa",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/NghiaNguyen170192/d365-project-template/issues"
+  },
+  "homepage": "",
+  "devDependencies": {
+    "@types/node": "^20.12.7",
+    "@types/xrm": "^9.0.79",
+    "typescript": "^5.4.3",
+    "uglify-js": "^3.17.4",
+    "uglifyjs-folder": "^3.3.0"
+  }
+}

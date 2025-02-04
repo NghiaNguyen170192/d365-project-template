@@ -1,0 +1,24 @@
+{
+  "suppressINotifyPattern": true,
+  "suppressGeneratedCodeAttribute": true,
+  "language": "CS",
+  "namespace": "ProjectName.Shared",
+  "serviceContextName": "ProjectNameContext",
+  "generateSdkMessages": true,
+  "generateGlobalOptionSets": false,
+  "emitFieldsClasses": true,
+  "entityTypesFolder": "Entities",
+  "messagesTypesFolder": "Messages",
+  "optionSetsTypesFolder": "OptionSets",
+  "entityNamesFilter": [
+    "account",
+    "contact"
+  ],
+  "messageNamesFilter": [
+    "searchautocomplete",
+    "searchquery",
+    "sample_*"
+  ],
+  "emitEntityETC": false,
+  "emitVirtualAttributes": false
+}
